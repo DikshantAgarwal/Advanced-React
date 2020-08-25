@@ -1,0 +1,51 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "description": "Advanced React",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib"
+  },
+
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "axios": "^0.20.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "ejs": "^3.1.3",
+    "eslint": "^7.6.0",
+    "eslint-plugin-react": "^7.20.6",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.7",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "react-test-renderer": "^16.13.1",
+    "webpack-cli": "^3.3.12"
+  },
+  
+  "scripts": {
+    "test": "jest --watchAll",
+    "dev": "set NODE_Path=./lib&& nodemon --exec babel-node lib/server.js",
+    "webpack": "webpack -wd"
+  },
+  "babel": {
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "author": "Dikshant Agarwal",
+  "license": "ISC"
+}
