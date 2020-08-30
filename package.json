@@ -6,7 +6,6 @@
   "directories": {
     "lib": "lib"
   },
-
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.4",
@@ -21,17 +20,22 @@
     "eslint": "^7.6.0",
     "eslint-plugin-react": "^7.20.6",
     "express": "^4.17.1",
+    "lodash.debounce": "^4.0.8",
+    "lodash.pickby": "^4.6.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.7",
     "webpack": "^4.44.1"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
     "jest": "^26.4.2",
     "react-test-renderer": "^16.13.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "why-did-you-update": "^1.0.8"
   },
-  
   "scripts": {
     "test": "jest --watchAll",
     "dev": "set NODE_Path=./lib&& nodemon --exec babel-node lib/server.js",
