@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -9,14 +10,32 @@ module.exports = {
     ]
   },
 
-  entry:['./lib/renderer/dom.js'],
+  // entry:['./lib/renderer/dom.js'],
+  entry:{
+    vendor:[
+      'react',
+      'react-dom',
+      'axios',
+      'prop-types',
+      'lodash.debounce',
+      'lodash.pickby'
+    ],
+    app:['./lib/renderer/dom.js']
+  },
   output: {
     path:path.resolve(__dirname,'public'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
-      { test: /\.js$/,exclude:/node_modules/, use: 'babel-loader' }
+      { test: /\.js$/,exclude:/node_modules/,
+         use: {loader:'babel-loader',options:{presets:["@babel/react","@babel/env"]}} }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all'
+    }
   }
 };
